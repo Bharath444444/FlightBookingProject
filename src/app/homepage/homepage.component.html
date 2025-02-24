@@ -1,0 +1,24 @@
+<nav class="navbar">
+  <h1 class="brand">Flight Booking</h1>
+  <div class="nav-links">
+    <a routerLink="/bookingpage">Book Flight</a>
+    <a routerLink="/detailspage">View Details</a>
+  </div>
+</nav>
+
+<div class="banner">
+  <h1 class="banner-text">Welcome to Flight Booking System!</h1>
+
+  <!-- Guidelines Section: Initially Visible -->
+  <div class="guidelines" *ngIf="showGuidelines">
+    <h2>Quick Guidelines :</h2>
+    <ul>
+      <li>While booking, enter a proper Flight ID (4-digit number).</li>
+      <li>Number of booking tickets cannot exceed 40.</li>
+    </ul>
+    <button class="got-it" (click)="hideGuidelines()">Got It</button>
+  </div>
+
+  <!-- BookFlightComponent: Appears After Clicking "Got It" -->
+  <app-bookflight *ngIf="!showGuidelines"></app-bookflight>
+</div>

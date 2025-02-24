@@ -1,0 +1,36 @@
+<nav class="navbar">
+    <h1 class="brand"><a routerLink="/homepage">Flight Booking</a></h1>
+    <div class="nav-links">
+      <a routerLink="/bookingpage">Book Flight</a>
+      <a routerLink="/detailspage">View Details</a>
+    </div>
+  </nav>
+  <div class="banner">
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Passenger name</th>
+            <th scope="col">Booking id</th>
+            <th scope="col">No of Tickets</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Flight ID</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let d of details">
+            <th scope="row">{{d.passengerName}}</th>
+            <td>{{d.id}}</td>
+            <td>{{d.noOfTickets}}</td>
+            <td>{{d.amount}}</td>
+            <td>{{d.flightId}}</td>
+            <td>
+                
+                <button class="btn btn-danger" (click)="deleteDetail(d.id)">Delete</button>
+            </td>
+        </tr>
+
+    </tbody>
+</table>
+<p *ngIf="errorMessage" style="color: red;">{{ errorMessage }}</p>
+</div>

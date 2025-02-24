@@ -1,0 +1,54 @@
+
+
+<div class="booking-container">
+    <h2>Book Flight</h2>
+  
+    <!-- Error and Success messages -->
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+    <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
+  
+    <form [formGroup]="bookingForm" (ngSubmit)="book()">
+      <div class="form-group">
+        <label for="passengerName">Passenger Name:</label>
+        <input
+          id="passengerName"
+          formControlName="passengerName"
+          type="text"
+          class="form-control"
+        />
+        <span *ngIf="control['passengerName'].invalid && control['passengerName'].touched">
+          Field required
+        </span>
+      </div>
+  
+      <div class="form-group">
+        <label for="noOfTickets">Number of Tickets:</label>
+        <input
+          id="noOfTickets"
+          formControlName="noOfTickets"
+          type="number"
+          class="form-control"
+        />
+        <span *ngIf="control['noOfTickets'].invalid && control['noOfTickets'].touched">
+          Enter a valid number (greater than 0)
+        </span>
+      </div>
+  
+      <div class="form-group">
+        <label for="flightId">Flight ID:</label>
+        <input
+          id="flightId"
+          formControlName="flightId"
+          type="text"
+          class="form-control"
+        />
+        <span *ngIf="control['flightId'].invalid && control['flightId'].touched">
+          Enter valid Flight ID (Ex: IND-105)
+        </span>
+      </div>
+  
+      <button type="submit" class="btn btn-primary">Book Flight</button>
+    </form>
+  </div>
+
+  

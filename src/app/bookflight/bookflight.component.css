@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.booking-container {
+    max-width: 600px;
+    margin:0px 300px;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  input.form-control {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    
+  }
+  
+  button.btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #40afea;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button.btn:hover {
+    background-color: #abecaf;
+    color: black;
+  }
+  
+  .error-message {
+    color: red;
+    margin-bottom: 20px;
+  }
+  
+  .success-message {
+    color: green;
+    margin-bottom: 20px;
+  }
+  
+  span {
+    color: red;
+    font-size: 12px;
+  }
+  /* Responsive Styling */
+@media (max-width: 1024px) {
+  .booking-container {
+      margin: 20px auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .booking-container {
+      max-width: 90%;
+      padding: 20px;
+      margin: 20px auto;
+  }
+
+  input.form-control {
+      padding: 8px;
+  }
+
+  button.btn {
+      padding: 8px;
+      font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .booking-container {
+      max-width: 95%;
+      padding: 15px;
+  }
+
+  input.form-control {
+      padding: 6px;
+      font-size: 14px;
+  }
+
+  button.btn {
+      padding: 6px;
+      font-size: 14px;
+  }
+
+  span {
+      font-size: 10px;
+  }
+}
