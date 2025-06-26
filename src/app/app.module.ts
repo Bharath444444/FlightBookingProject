@@ -9,6 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {  HttpClientModule } from '@angular/common/http';
 import { BookingpageComponent } from './bookingpage/bookingpage.component';
 import { DetailspageComponent } from './detailspage/detailspage.component';
+import { AvailableflightsComponent } from './availableflights/availableflights.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { DetailspageComponent } from './detailspage/detailspage.component';
     HomepageComponent,
     BookflightComponent,
     BookingpageComponent,
-    DetailspageComponent
+    DetailspageComponent,
+    AvailableflightsComponent
   ],
   imports: [
     BrowserModule,

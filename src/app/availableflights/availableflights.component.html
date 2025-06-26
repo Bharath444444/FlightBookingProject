@@ -1,0 +1,23 @@
+<nav class="navbar">
+    <h1 class="brand"><a routerLink="/homepage">Flight Booking</a></h1>
+    <div class="nav-links">
+      <a routerLink="/bookingpage">Book Flight</a>
+      <a routerLink="/detailspage">View Details</a>
+      <a routerLink="/availableflights">Available Flights</a>
+
+    </div>
+  </nav>
+<div class="banner">
+    <h2 class="heading">Available Flights</h2>
+
+ <div class="flight-container">
+ <div *ngFor="let flight of flights" class="flight-card">
+    <h3>{{ flight.flightId }}</h3>
+    <p><strong>From:</strong> {{ flight.source }}</p>
+    <p><strong>To:</strong> {{ flight.destination }}</p>
+    <p><strong>Time:</strong> {{ flight.time }}</p>
+    <p><strong>Price:</strong> ₹{{ flight.price }}</p>
+    <button (click)="bookFlight(flight.flightId)">Book Now</button>
+  </div>
+  </div>
+</div>

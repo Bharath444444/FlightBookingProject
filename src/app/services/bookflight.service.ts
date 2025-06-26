@@ -9,7 +9,7 @@ import { Booking } from '../models/booking';
 })
 export class BookFlightService {
   
-  private baseUrl = 'http://localhost:8085/api/bookings';
+  private baseUrl = 'http://localhost:8086/api/bookings';
   
   // Injecting HttpClient to make HTTP requests
   constructor(private httpClient: HttpClient) {}

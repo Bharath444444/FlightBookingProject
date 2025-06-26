@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DetailsService {
-  private baseurl = 'http://localhost:8085/api/details';
+  private baseurl = 'http://localhost:8086/api/details';
   constructor(private http:HttpClient) { }
   getAllDetails(): Observable<Details[]> {
     return this.http.get<Details[]>(`${this.baseurl}/all`);

@@ -3,6 +3,8 @@
     <div class="nav-links">
       <a routerLink="/bookingpage">Book Flight</a>
       <a routerLink="/detailspage">View Details</a>
+      <a routerLink="/availableflights">Available Flights</a>
+
     </div>
   </nav>
   <div class="banner">
@@ -10,7 +12,8 @@
     <thead>
         <tr>
             <th scope="col">Passenger name</th>
-            <th scope="col">Booking id</th>
+             <th scope="col">From</th>
+            <th scope="col">TO</th>
             <th scope="col">No of Tickets</th>
             <th scope="col">Amount</th>
             <th scope="col">Flight ID</th>
@@ -18,15 +21,16 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let d of details">
-            <th scope="row">{{d.passengerName}}</th>
-            <td>{{d.id}}</td>
-            <td>{{d.noOfTickets}}</td>
-            <td>{{d.amount}}</td>
-            <td>{{d.flightId}}</td>
+        <tr *ngFor="let d of detailsWithFlight">
+            <th scope="row">{{d.detail.passengerName}}</th>
+            <td *ngIf="d.flight">{{ d.flight.source }}</td>
+      <td *ngIf="d.flight">{{ d.flight.destination }}</td>
+            <td>{{d.detail.noOfTickets}}</td>
+            <td>{{d.detail.amount}}</td>
+            <td>{{d.detail.flightId}}</td>
             <td>
-                
-                <button class="btn btn-danger" (click)="deleteDetail(d.id)">Delete</button>
+                 <button class="btn btn-primary me-2" (click)="printTicket(d.detail)">Print Ticket</button>
+                <button class="btn btn-danger" (click)="deleteDetail(d.detail.id)">Delete</button>
             </td>
         </tr>
 
