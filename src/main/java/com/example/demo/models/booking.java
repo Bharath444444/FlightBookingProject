@@ -23,7 +23,7 @@ public class booking {
     @NotNull(message = "Flight ID is required")
     private String flightId;
 
-    private double amount;
+    private Double amount;
 
 	public Long getId() {
 		return id;
@@ -57,11 +57,11 @@ public class booking {
 		this.flightId = flightId;
 	}
 
-	public double getAmount() {
+	public Double getAmount() {
 		return amount;
 	}
 
-	public void setAmount(double amount) {
+	public void setAmount(Double amount) {
 		this.amount = amount;
 	}
 
@@ -72,7 +72,7 @@ public class booking {
 
 	public booking(Long id, @NotNull(message = "Passenger name cannot be empty") String passengerName,
 			@Min(value = 1, message = "At least 1 ticket must be booked") int noOfTickets,
-			@NotNull(message = "Flight ID is required") String flightId, double amount) {
+			@NotNull(message = "Flight ID is required") String flightId, Double amount) {
 		super();
 		this.id = id;
 		this.passengerName = passengerName;
