@@ -29,9 +29,12 @@
           type="number"
           class="form-control"
         />
-        <span *ngIf="control['noOfTickets'].invalid && control['noOfTickets'].touched">
+        <span *ngIf="control['noOfTickets'].errors?.['min'] && control['noOfTickets'].touched">
           Enter a valid number (greater than 0)
         </span>
+        <span *ngIf="control['noOfTickets'].errors?.['max'] && control['noOfTickets'].touched">
+  Cannot book more than 2 tickets.
+</span>
       </div>
   
       <div class="form-group">

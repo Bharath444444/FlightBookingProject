@@ -42,7 +42,7 @@ export class BookflightComponent implements OnInit {
   private initializeForm(): void {
     this.bookingForm = this.formBuilder.group({
       passengerName: ['', Validators.required],
-      noOfTickets: [1, [Validators.required, Validators.min(1)]],
+      noOfTickets: [1, [Validators.required, Validators.min(1),Validators.max(2)]],
       flightId: ['', Validators.required],
     });
   }

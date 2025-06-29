@@ -1,12 +1,30 @@
-<nav class="navbar">
-    <h1 class="brand"><a routerLink="/homepage">Flight Booking</a></h1>
-    <div class="nav-links">
-      <a routerLink="/bookingpage">Book Flight</a>
-      <a routerLink="/detailspage">View Details</a>
-      <a routerLink="/availableflights">Available Flights</a>
 
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/homepage">INFY AIRLINES</a>
+    
+    <!-- Toggle button for mobile -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navigation links -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/bookingpage">Book Flight</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/detailspage">View Details</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/availableflights">Available Flights</a>
+        </li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
   <div class="banner">
 <app-bookflight></app-bookflight>
 </div>

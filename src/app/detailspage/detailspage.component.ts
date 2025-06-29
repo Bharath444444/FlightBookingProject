@@ -76,6 +76,7 @@ export class DetailspageComponent implements OnInit {
         <p><strong>Flight ID:</strong> ${detail.flightId}</p>
         <p><strong>Tickets:</strong> ${detail.noOfTickets}</p>
         <p><strong>Total Amount:</strong> ₹${detail.amount}</p>
+        <p><strong>Seat Number(s):</strong> ${detail.seatnumber}</p>
         <br />
         <p>Thank you for booking with us!</p>
         <script>

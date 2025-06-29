@@ -3,5 +3,6 @@ export class Details {
     //id!: number;
     noOfTickets!: number;
     amount!: number;
-    flightId !: string
+    flightId !: string;
+    seatnumber?:string
 }

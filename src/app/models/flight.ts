@@ -5,4 +5,5 @@ export class Flight {
   destination!: string;
   time!: string;
   price!: number;
+  seatlimit!:number;
 }
