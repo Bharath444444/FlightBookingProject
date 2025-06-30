@@ -17,6 +17,8 @@ public class details {
 	    private int noOfTickets;
 	    private double amount;
 	    private String flightId;
+	    @Column(name = "seatnumber")
+	    private String seatnumber;
 		public Long getId() {
 			return id;
 		}
@@ -38,22 +40,36 @@ public class details {
 		public double getAmount() {
 			return amount;
 		}
+		public void setAmount(double amount) {
+			this.amount = amount;
+		}
 		public String getFlightId() {
 			return flightId;
 		}
 		public void setFlightId(String flightId) {
 			this.flightId = flightId;
 		}
-		public details() {
-			super();
-			// TODO Auto-generated constructor stub
+		public String getSeatnumber() {
+			return seatnumber;
 		}
-		public details(Long id, String passengerName, int noOfTickets, double amount, String flightId) {
+		public void setSeatnumber(String seatnumber) {
+			this.seatnumber = seatnumber;
+		}
+		public details(Long id, String passengerName, int noOfTickets, double amount, String flightId,
+				String seatnumber) {
 			super();
 			this.id = id;
 			this.passengerName = passengerName;
 			this.noOfTickets = noOfTickets;
+			this.amount = amount;
 			this.flightId = flightId;
+			this.seatnumber = seatnumber;
 		}
+		public details() {
+			super();
+			// TODO Auto-generated constructor stub
+		}
+
+		
 	    
 }

@@ -7,5 +7,5 @@ import com.example.demo.models.booking;
 
 @Repository
 public interface bookingrepository extends JpaRepository<booking, Long> {
-
+	 booking findTopByPassengerNameOrderByIdDesc(String passengerName);
 }

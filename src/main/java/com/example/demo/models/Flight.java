@@ -15,6 +15,15 @@ public class Flight {
     private String destination;
     private String time;
     private double price;
+    @Column(name = "seatlimit")
+    private Integer seatlimit;
+	
+	public Integer getSeatlimit() {
+		return seatlimit;
+	}
+	public void setSeatLimit(Integer seatlimit) {
+		this.seatlimit = seatlimit;
+	}
 	public int getId() {
 		return id;
 	}
@@ -51,7 +60,11 @@ public class Flight {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	public Flight(int id, String flightId, String source, String destination, String time, double price) {
+	
+	
+	
+	public Flight(int id, String flightId, String source, String destination, String time, double price,
+			Integer seatlimit) {
 		super();
 		this.id = id;
 		this.flightId = flightId;
@@ -59,10 +72,13 @@ public class Flight {
 		this.destination = destination;
 		this.time = time;
 		this.price = price;
+		this.seatlimit = seatlimit;
 	}
 	public Flight() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+
+	
     
 }
