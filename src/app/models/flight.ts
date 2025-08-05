@@ -6,4 +6,5 @@ export class Flight {
   time!: string;
   price!: number;
   seatlimit!:number;
+  journeyDate?:string
 }
