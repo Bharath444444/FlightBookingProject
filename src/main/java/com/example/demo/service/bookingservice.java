@@ -46,7 +46,7 @@ public class bookingservice {
         booking savedBooking = bookingRepository.save(booking);
 
         // Step 5: Update seatLimit in flight
-        flight.setSeatLimit(available - requested);
+        flight.setSeatlimit(available - requested);
         flightRepository.save(flight);
 
         return savedBooking;

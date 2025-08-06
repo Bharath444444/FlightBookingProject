@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.models.booking;
 import com.example.demo.models.details;
 import com.example.demo.repository.bookingrepository;
+import com.example.demo.service.FlightService;
 import com.example.demo.service.detailsservice;
 
 @RestController
@@ -30,10 +31,26 @@ public class detailscontroller {
 	        return detailsService.getAllBookingDetails();
 	    }
 
+	    @Autowired
+	    private FlightService flightService; // ✅ Inject the service
+
 	    @DeleteMapping("/delete/{id}")
 	    public void deleteBooking(@PathVariable Long id) {
-	        detailsService.deleteBooking(id);
+	        details bookingDetail = detailsService.getBookingById(id); // You'll add this in detailsservice
+
+	        if (bookingDetail != null) {
+	            flightService.getFlightByFlightId(bookingDetail.getFlightId())
+	                .ifPresent(flight -> {
+	                    // ✅ Match setter name exactly as in Flight entity
+	                    flight.setSeatlimit(flight.getSeatlimit() + bookingDetail.getNoOfTickets());
+	                    flightService.saveFlight(flight);
+	                });
+
+	            detailsService.deleteBooking(id);
+	        }
 	    }
+
+
 	    @PostMapping("/add")
 	    public details addBookingDetail(@RequestBody details detail) {
 	    	booking latestBooking = bookingRepository.findTopByPassengerNameOrderByIdDesc(detail.getPassengerName());

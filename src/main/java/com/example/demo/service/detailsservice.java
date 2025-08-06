@@ -25,4 +25,8 @@ public class detailsservice {
 	    public void deleteBooking(Long id) {
 	        detailsRepository.deleteById(id);
 	    }
+	    public details getBookingById(Long id) {
+	        return detailsRepository.findById(id).orElse(null);
+	    }
+
 }

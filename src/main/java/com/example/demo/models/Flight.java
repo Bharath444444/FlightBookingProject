@@ -1,5 +1,7 @@
 package com.example.demo.models;
 import jakarta.persistence.*;
+import java.time.LocalDate;
+
 
 @Entity
 @Table(name = "flights")
@@ -17,13 +19,8 @@ public class Flight {
     private double price;
     @Column(name = "seatlimit")
     private Integer seatlimit;
-	
-	public Integer getSeatlimit() {
-		return seatlimit;
-	}
-	public void setSeatLimit(Integer seatlimit) {
-		this.seatlimit = seatlimit;
-	}
+    @Column(name = "journey_date")
+    private LocalDate journeyDate;
 	public int getId() {
 		return id;
 	}
@@ -60,11 +57,20 @@ public class Flight {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	
-	
-	
+	public Integer getSeatlimit() {
+		return seatlimit;
+	}
+	public void setSeatlimit(Integer seatlimit) {
+		this.seatlimit = seatlimit;
+	}
+	public LocalDate getJourneyDate() {
+		return journeyDate;
+	}
+	public void setJourneyDate(LocalDate journeyDate) {
+		this.journeyDate = journeyDate;
+	}
 	public Flight(int id, String flightId, String source, String destination, String time, double price,
-			Integer seatlimit) {
+			Integer seatlimit, LocalDate journeyDate) {
 		super();
 		this.id = id;
 		this.flightId = flightId;
@@ -73,6 +79,7 @@ public class Flight {
 		this.time = time;
 		this.price = price;
 		this.seatlimit = seatlimit;
+		this.journeyDate = journeyDate;
 	}
 	public Flight() {
 		super();

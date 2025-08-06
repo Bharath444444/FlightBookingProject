@@ -19,4 +19,8 @@ public class FlightService {
     public Optional<Flight> getFlightByFlightId(String flightId) {
         return flightRepo.findByFlightId(flightId);
     }
+    public void saveFlight(Flight flight) {
+        flightRepo.save(flight);
+    }
+
 }
